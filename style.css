@@ -1,0 +1,1462 @@
+@import url('resetnormal.css');
+
+/*
+ * Theme Name: Silk Forest
+ * Theme URI: themes.penumbrawebworks.com/silkforest
+ * Author: Linda Moss
+ * Author URL: http://www.westofwonder.com
+ * Description: Designed from the ground up to be both
+ *    accessible and fully responsive. Lots of options,
+ *    well commented code, and a sample child theme. 
+ * Version: 1.0
+ * Licence: GNU General Public Licence
+ * Licence URI: licence.txt
+ * Text Domain: silkforesttextdomain
+ * Domain Path: /languages
+ * Tags: TODO
+ */
+
+/**
+ * Licencing Info 
+ *
+ * This theme uses the following:
+ *    -- a fontello icon set including elements from:
+ *          * Font Awesome
+ *          * Web Symbols
+ *          * Entypo  
+ *          * Zocial
+ *          * Licence for Fontello and componant icon
+ *            sets: Fontello_Licence.txt in this directory.
+ *    -- The Modernizr javascript from modernizr.com, released
+ *       under the MIT Licence ( see mit_licence.txt in this
+ *       directory )
+ *    -- I borrowed componants from the
+ *          * Underscores theme
+ *          * Twentythirteen theme
+ *          * both GPL (GPL licence in this directerly at GNU_licence.txt )
+ *    -- My 'resetnormal.css' file borrows heavily both from:
+ *          * Normalize.css from
+ *          * reset.css from
+ *          * Nicolas Gallagher's & Jonathan Neal's normalize.css: 
+ *  	         http://git.io/normalize (MIT licence) 
+ *          * Eric Meyer's reset.css: 
+ * 	         http://meyerweb.com/eric/tools/css/reset/  
+ * 	         (Released to public domain)
+ * 
+ * The portions of the theme original to me, I release under GPL.
+ *
+ */ 
+
+
+/* Contents:
+ *    I.   Typography
+ *       I.a Font Families
+ *       I.b Header tags
+ *    II.  Colors
+ *       II.a Link colors
+ *       II.b Header text colors
+ *       II.c Comments area colors
+ *       II.d Navbar and menu colors
+ *       II.e Other colors
+ *    III. =Responsive Layout
+ *       III.a Boxsizing declarations
+ *       III.b Collapsing items
+ *       III.c Navbar (Uncollapsed)
+ *       III.d Sidebar positioning
+ *          III.c.1 smallest screens: below content
+ *          III.c.2 Moving to side as screen widens
+ *          III.c.3 Changing percentage width as screen widens further 
+ *       III.e Widgets
+ *       III.f Coments area layout
+ *          III.f.1 Comments list
+ *          III.f.2 Individual comments
+ *          III.f.3 Adjust margins as screen grows
+ *       III.g Other layout elements
+ *          III.g.1 Index, Search, and Archive margins and padding
+ *          III.g.2 Images and media in posts
+ *          III.g.3 'Previous' and 'Next' navigation links
+ *          III.g.4 Other margins, padding, and layout
+ *    IV.  Post-format styling
+ *          IV.a. Gallery post format
+ *          IV.b. all 'Minor' post formats
+ *          IV.c. link
+ *          IV.d. quote
+ *    V.   Inserting icons
+ *          IV.a. 'Next' and 'Previous'
+ *          IV.b. Icon to precede post title on sticky posts
+ *          IV.c. Icons to appear with the labels for tags, categories, 
+ *                and comment link.
+ *          IV.d. Dynamic arrows for collapsing items on small screens.
+ *          IV.e. Dynamic arrows for drop-down menu items.
+ *          IV.f. Post-format Icons
+ *
+ *
+ */
+
+
+
+
+/* ==================================================================== */
+/* Typography
+/* ==================================================================== */
+
+/**
+ * I. Typography
+ *
+ * Contains font families, font sizes, and text styling (except for 'color'
+ * which is in the 'II. Color' section.
+ */
+
+
+/** 
+ * I.a. Font Families
+ *
+ * Defines the font families for headers, main text, form elements, 
+ * fixed-width text, and the icon font. 
+ */
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('inc/fontello/font/fontello.eot?36909878');
+  src: url('inc/fontello/font/fontello.eot?36909878#iefix') format('embedded-opentype'),
+       url('inc/fontello/font/fontello.woff?36909878') format('woff'),
+       url('inc/fontello/font/fontello.ttf?36909878') format('truetype'),
+       url('inc/fontello/font/fontello.svg?36909878#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body
+{
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+pre, 
+code, 
+var, 
+kbd, 
+tt,
+samp,
+.format-chat .entry-body,
+.format-chat .article-body
+{
+	font-family: Consolas, "Lucida Console", "Nimbus Mono", "Courier New", monospace ;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+
+button,
+input,
+select,
+textarea
+{
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+.icon-hook {
+	font-family: fontello;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ----------------------------------------------------- */
+/* I.b Header Tags 					 */
+/* ----------------------------------------------------- */
+
+/**
+ * I.b. Header Tags
+ *
+ * Sizing and styling (other than color) for header tags.
+ */
+
+h1 {	
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.333rem;
+}
+
+h3 {
+	font-size: 1.125rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: .844;
+}
+
+h6 {
+	font-size: .75rem;
+}
+
+
+/* ===================================================== */
+/* Colors 						 */
+/* ===================================================== */
+
+/**
+ * II. Colors
+ *
+ * All of the color properties are described in this section.
+ */
+
+
+/**
+ * II.a Link Colors
+ *
+ * Colors of various types of hyperlinks under various conditions.
+ */
+
+
+
+/* Default link styles */
+
+a,
+a:link {
+	color: #56B3BC; 
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #227078; 
+	text-decoration: underline;
+}
+
+/* Header links: same color as the header, no underline... */
+a:link.header-link,
+a:visited.header-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*... Except during hover or focus, when default links and header links
+ * turn red (and the header links get an underline) */
+a:hover,
+a:focus,
+a:active,
+a.header-link:hover,
+a.header-link:focus,
+a.header-link:active {
+	color: #900;
+	text-decoration: underline;
+}
+
+/* Links in the nav bar menus, unhighlighted */
+.primary-navigation a,
+.primary-navigation a:link,
+.primary-navigation a:visited {
+	color: #ecd6b6; 
+	text-decoration: none;
+
+}
+
+/* Links in the nav bar menus, highlighted */
+.primary-navigation li:hover > a,
+.primary-navigation li:hover > a:link,
+.primary-navigation li:hover > a:visited {
+	color: #555; 
+	text-decoration: none;
+
+}
+
+/**
+ * II.b Header text colors
+ *
+ * Colors of the contents of header tags.
+ */
+
+/* Default header color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #722647; 
+}
+
+/* ...except these specicif headers are handled differently */
+.site-title,
+.title-keyphrase {
+	color: #444;
+}
+
+.menu-toggle {
+	color: #eee;
+}
+
+.article-body h2,
+.secondary .widget-title,
+section .widget-title {
+	background-color: #FEF0DD; 
+}
+
+.site-footer .widget-title {
+	background-color: #D4AF7D;
+}
+
+/**
+ * II.c Comments area colors 
+ *
+ * Colors for the comments area, comments list, and 
+ * individual comments.
+ */
+
+.comments-area { 
+	background-color: #ccc;
+}
+
+.comment-navigation {
+	background-color: #ddd;
+	margin-bottom: 1rem;
+}
+
+.form-allowed-tags {
+	color: #669;
+}
+
+.form-allowed-tags code {
+	background-color: inherit;
+}
+
+.comment {
+	box-shadow: 0 -2px 2px 0 #999;
+	background-color: #fff;
+}
+.comment-respond {
+	background-color: #ddd;
+	padding: 2rem;
+}
+
+.comments-description {
+	margin-bottom: 0;
+}
+
+.comments-area-header {
+	background-color: #ddd;
+}
+
+.bypostauthor {
+	background-color: #FEF0DD;
+}
+
+/**
+ * II.d Navbar and Menu colors
+ *
+ */
+
+.menu,
+.primary-navigation
+{
+	background-color: #722647;
+}
+
+.primary-navigation ul ul {
+	background-color: #227078; 
+}
+
+.primary-navigation ul ul ul {
+	background-color: #56B3BC; 
+}
+
+
+/* Menu item background, unhighlighted */
+.primary-navigation li {
+	background-color: inherit; /* Will have the menu's background color */
+
+	transition: background-color 1s ease 0s;
+	-webkit-transition: background-color 1s ease 0s;
+	-moz-transition: background-color 1s ease 0s;
+}
+
+/* Menu item background, highlighted on mouseover */
+.primary-navigation li:hover {
+	background-color: #ddd;
+
+	transition: background-color 1s ease 0s;
+	-webkit-transition: background-color 1s ease 0s;
+	-moz-transition: background-color 1s ease 0s;
+}
+
+/**
+ * II.e Other coloring 
+ */
+
+body,
+.article {
+	background-color: #fff;
+	color: #444;
+}
+
+.entry-list {
+	background-color: #ddd;
+}
+
+article {
+	background-color: #fff;
+}
+.masthead,
+.secondary {
+	background-color:#F5E2C9;  
+
+}
+
+.site-footer {
+	background-color: #722647; 
+}
+
+.postnav-bar,
+.entrypage-footer,
+.sticky {
+	background-color: #FEF0DD;
+}
+
+.meta-link {
+	margin: .5rem;
+}
+.entry-item .page-links {
+	border: 1px solid #bbb;
+	padding: .5rem;
+	margin: 0;
+}
+
+.single-article .page-links {
+
+	border: 1px solid #ccc;
+	padding: .5rem;
+	margin: .5rem;
+}
+
+
+.errorpage-container {
+	background-color: #fff;
+}
+
+.entrypage-description {
+	color: #777;
+}
+
+.entry-header,
+.widget-title {
+	border: thin solid #F5E2C9;
+}
+
+@media ( min-width: 20em ) {
+	.entry-header {
+		background-color: #f5e2c9;
+	}
+	.entry-footer {
+		background-color: #eee;
+	}
+}	
+
+
+
+.secondary .widget {
+	border-color: #D4AF7D;
+}
+.site-footer .widget {
+	border-color: #111;
+}
+.errorpage-container .widget {
+	border-color: #aaa;
+}
+
+
+
+/* ===================================================== */
+/* III. Responsive Layout					 */
+/* ===================================================== */
+
+/**
+ * III. Responsive Layout
+ *
+ * Primary layout of the page; contains multiple media queries
+ * for responsive design.
+ */
+
+/**
+ * III.a. Box-Sizing
+ *
+ * Dealing with widths in responsive layouts is much easer when
+ * the border-box box-sizing method is used, so we will use that
+ * when available. When not available, we'll fall back as needed. 
+ */
+
+.wp-caption,
+.site-content,
+.secondary,
+.main-container,
+.widget,
+.widget-container {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: 0;
+}
+
+/**
+ * III.b Collapsing Items					
+ *
+ * Collapse the navbar, widgets, and articles on a small 
+ * screen, unless the browser has javascript turned off
+ * and/or doesn't recognize media queries. 
+ */
+
+.menu-toggle {
+	display: none;
+	margin: 0;
+	padding: .25rem;
+}
+
+@media ( max-width: 20em )
+{
+	/* Show the menu toggle (which is hidden at wider widths) */
+	.menu-toggle {
+		display: block;
+	}
+
+	/* We want all the menu subelemetns to display as blocks within
+	 * the flow of the document when the toggle is opened -- not
+	 * the hover menus that wider screens use. */
+	.menu-item,
+	.sub-menu,
+	.page_item,
+	ul.children	{
+		display: block;
+		position: relative;
+	}
+
+	.js .collapsing-item,
+	.js .widget .widget-title ~ *
+	{
+		/* The .widget-title ~ * selector is to get around there
+		 * being no easy way to put any sort of <div> around
+		 * the non-title contents of a WordPress widget. So, 
+		 * instead of adding a .collapsing-item class to a <div> 
+		 * that we don't have, we are instead using the sibling
+		 * selector on the widget title to say "all immediate 
+		 * subelements of .widget elements with a title, except
+		 * for the title itself."*/
+		display: none;
+	}
+
+	/* .toggled is added by the javascript that collapses the items.
+	 * .js is added by the Modernizr script when JavaScript is available */
+	.js .collapsible-container.toggled .collapsing-item ,
+	.js .collapsible-container.toggled .widget-title ~ * 
+	{
+		display: block;
+	}
+
+	/* The JavaScript watches for click events on elements with the 
+	 * .collapse-trigger class, and adds or removes the .toggled class
+	 * when it sees one. */ 
+	.collapse-trigger {
+		cursor: pointer;
+		display: block;
+	}
+
+}
+
+/**
+ * III.c Navbar (Uncollapsed)	
+ *
+ * Uncollapses the nav-bar, and makes other 
+ * adjustments for full-sized screens.
+ */
+
+/* True for both minimized and maximized navbar: */
+.primary-navigation {
+	box-shadow: 0 2px 2px 0 #777;
+	min-height: 2rem;
+	padding: .1rem;
+}
+
+
+.primary-navigation ul {
+	list-style: none;
+}
+
+
+
+.primary-navigation .menu-item,
+.primary-navigation .page_item {
+	padding: .25rem;
+}
+
+
+.primary-navigation ul ul {
+	margin: 0;
+	padding: .5rem .25rem;
+}
+
+/* The uncollapsed navbar */
+@media ( min-width: 20em ) {
+
+	.primary-navigation ul {
+		margin: 0;
+	}
+
+	/* Minimum width for drop-down menus */	
+	.primary-navigation ul ul .menu-item,
+	.primary-navigation ul ul .page_item {
+		min-width: 10rem;
+	}	
+
+	
+	/* Switch top-level menu items to inline-blocks, and give them
+	 * a bit more room too breate */
+	.primary-navigation > div > ul > li {
+		display: inline-block;
+		padding: .25rem .75rem;
+		margin: .25rem;
+	}
+
+	/* Drop down menus are hidden until the item is hovered over */
+	.primary-navigation ul ul {
+		display: none;
+		position: absolute;
+		z-index: 999999;
+	}
+
+
+	.primary-navigation li:hover > ul {
+		display: block;
+	}
+
+	/* So that the box-shadow will be on top of
+	 * the sidebar */
+	.primary-navigation {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Add a bit more padding, now that there's room to breate */
+	.primary-navigation,
+	.primary-navigation ul ul,
+	.primary-navigation ul ul li 
+	{
+		padding: .5rem;
+	}
+
+	.primary-navigation ul ul li	{
+		margin: 0 .5rem;
+	}	
+}
+/* ----------------------------------------------------- */
+/* III.d Sidebar positioning					 */
+/* ----------------------------------------------------- */
+
+/**
+ * III.d Sidebar Positioning.
+ *
+ * Sets the position and width of the sidebar based on the
+ * screen width. Uses flexbox if the browser supports it,
+ * otherwise, it willuse floats.
+ */
+
+
+/* III.d.1 Smallest screens: below content */
+/* ----------------------------------------------------- */
+
+.site-content,
+.secondary,
+.main-container {
+	/* This is the display fallback, which will be overridden
+	 * below on browsers that support flexbox. */
+	display: block; 
+}
+
+
+/* At smalls screen widths, the 'side'-bar is below the
+ * content, and the full width of the screen. */
+.main-container,
+.secondary {
+	width: 100%;
+	transition: width 1s ease 0s;
+	-webkit-transition: width 1s ease 0s;
+	-moz-transition: width 1s ease 0s;
+	-o-transition: width 1s ease 0s;
+}
+
+/* III.d.2 Moving the sidebar to the side			 */
+/* ----------------------------------------------------- */
+
+@media ( min-width: 40em ) {
+	
+	/* Flexbox version. The Modernizr will add .flexbox or .no-flexbox,
+	 * and .flexboxlegacy or .no-flexboxlegacy to the html tag when it
+	 * runs. */
+	.flexbox .site-content,
+	.flexboxlegacy .site-content {
+
+		/* 2009 Syntax */
+		display: box;
+		display: -webkit-box;
+		display: -moz-box;
+		box-orient: horizontal;
+		-webkit-box-orient: horizontal;
+		-moz-box-orient: horizontal;
+
+		/* 2011 Syntax (IE 10) */
+		display: -ms-flexbox; 
+		-ms-box-orient: horizontal;
+		-ms-flex-direction: row;
+
+		/* 2013 Syntax */
+		display: flex; 
+		display: -webkit-flex; 
+		flex-direction: row; 
+	}
+
+	.flexbox .main-container,
+	.flexboxlegacy .main-container {
+		width: 2px;
+		-ms-flex: 2 2;
+		flex-grow: 2;
+		-webkit-flex-grow: 2;
+	}
+
+	.flexbox .secondary,
+	.flexboxlegacy .secondary {
+		width: 1px;
+		-ms-flex: 1 1;
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+	}
+
+	/* Fallback version: floats */
+
+	.no-flexbox.no-flexboxlegacy .site-content,
+	.no-js .site-content {
+		overflow: auto;
+	}
+
+	.no-flexbox.no-flexboxlegacy.boxsizing .main-container {
+		float: left;
+		width: 67%;
+	}
+
+	.no-flexbox.no-flexboxlegacy.boxsizing .secondary {
+		float: right;
+		width: 33%;
+	}
+
+	.site-footer {
+		clear: both;
+	}
+
+	/* When setting the percentages, we need to check for boxsizing 
+	 * support, and allow room for the padding when it's not present.
+	 * No way to do this precicely without using javascript or making
+	 * it non-responsive, so ancient browsers that don't support 
+	 * box-sizing will have gaps along the side-- but that's better 
+	 * than the sidebar jumping below the main content when we don't 
+	 * want it to. */
+
+	.no-flexbox.no-flexboxlegacy.no-boxsising .main-container,
+	.no-js .main-container {
+		float: left;
+		width: 60%;
+	}
+
+
+	.no-flexbox.no-flexboxlegacy.no-boxsizing .secondary,
+	.no-js .secondary {
+		float: right;
+		width: 30%;
+	}
+
+
+}
+
+/* III.d.3 Width of sidebar */
+/*--------------------------------------------------*/
+/* As the viewport width increases, the percentage of the screen the
+ * sidebar takes up should decrease, otherwise it will be huge. */
+
+@media ( min-width: 60em ) {
+
+	/* Flexbox version */
+	.flexbox .main-container,
+	.flexboxlegacy .main-container {
+		width: 3px;
+		-ms-flex: 3 3;
+		flex-grow: 3;
+		-webkit-flex-grow: 3;
+	}
+
+	/* no flexbox fallback */
+	.no-flexbox.no-flexboxlegacy.boxsizing .main-container {
+		width: 75%;
+	}
+	
+	.no-flexbox.no-flexboxlegacy.boxsizing .secondary {
+		width: 25%;
+	}
+
+	/* No box sizing fallback */
+	.no-flexbox.no-flexboxlegacy.no-boxsizing .main-container,
+	.no-js .main-container {
+		width: 70%;
+	}
+
+	.no-flexbox.no-flexboxlegacy.no-boxsizing .secondary,
+	.mo-js .secondary {
+		width: 20%;
+	}
+
+}
+
+@media ( min-width: 75em ) {
+
+	/* Flexbox */
+	.flexbox .main-content,
+	.flexboxlegacy .main-content {
+		width: 4px;
+		-ms-flex: 4 4;
+		flex-grow: 4;
+		-webkit-flex-grow: 4;
+	}
+
+	/* no flexbox Fallback */
+	.no-flexbox.no-flexboxlegacy .main-container,
+	.no-js .main-container {
+		width: 80%;
+	}
+
+	.no-flexbox.no-flexboxlegacy .secondary,
+	.mo-js .secondary {
+		width: 20%;
+	}
+	
+	/* no box-sizing fallback */
+	.no-flexbox.no-flexboxlegacy.no-boxsizing .main-container,
+	.no-js .main-container {
+		width: 77%;
+	}
+
+	.no-flexbox.no-flexboxlegacy.no-box-sizing .secondary,
+	.no-js .secondary {
+		width: 18%;
+	}
+}
+
+/** 
+ * III.e Widgets
+ *
+ * Layout and sizing of widgets at various screen widths.
+ */
+
+/* The slector for "all IMMEDIATE chidlren of a .widget element" */
+.widget > * {
+	padding: .25rem 1rem;
+}
+
+.widget ul {
+	list-style: none;
+}
+
+.widget li {
+	padding: .25rem;
+}
+
+.widget-title
+{
+	margin: 0;
+}
+
+/* On smallest screens, the footer widgets, sidebar widgets,
+ * and errorpage widgets are all one to a row. */
+.widget {
+	display: block;
+	width: 90%;
+	padding: .25rem;
+	margin: .25rem;
+
+	/* This centers the widget within it's container */
+	margin-left: auto;
+	margin-right: auto;
+
+	/* Smooth the transitions */
+	transition: width 1s ease 0s;
+	-webkit-transition: width 1s ease 0s;
+	-moz-transition: width 1s ease 0s;
+	-o-transition: width 1s ease 0s;
+}
+
+/* Add a border when the screen gets a wee bit larger */
+
+.widget {
+	border: none;
+}
+@media ( min-width: 20rem ) {
+
+	.widget {
+		border: 1px solid;
+		/* See colors section for border colors. */
+	}
+}
+/* As the screen gets wider, the footer and errorpage will
+ * allow more widgets per row. */
+@media ( min-width: 30em ) {
+	.site-footer .widget,
+       .errorpage-container .widget {
+		display: inline-block;
+		vertical-align: top;
+		width: auto;
+		min-width: 10rem;
+		max-width: 30rem;
+		margin: 1rem;
+		padding: 1rem;
+	}
+}
+
+/**
+ * III.f Comments area layout
+ *
+ * Layout of the comments and comments area at various screen
+ * widths.
+ */
+
+/* III.f.1 Comments list  */
+/*--------------------------------------------------------------------- */
+
+.comments-area,
+.comment-reply-title,
+.comments-area-footer,
+.comments-area-header,
+.comments-navigation {
+	margin: 0;
+	padding: .5rem;
+}
+
+.comments-area-header {
+	margin-bottom: 1rem;
+}
+
+.comments-title,
+.comment-list {
+	margin: 0;
+	padding: 0;
+}
+
+.comment-list,
+.comment-list .children {
+	list-style: none;
+}
+
+.form-submit {
+	margin-bottom: 0;
+}
+
+.logged-in-as {
+	margin-top: 0;
+}
+
+/* III.f.2 Individual comments	*/
+/*--------------------------------------------------------------------- */
+
+img.avatar {
+	float: left;
+	margin: 0;
+	padding: .5rem;
+}	
+
+.comment {
+	padding: .5rem 0 .5rem .5rem;
+	margin: 0;
+}
+
+.comment-list .children {
+	padding: 0;
+	padding-top: .5rem;
+	margin: 0;
+
+}
+
+.comment-meta {
+	padding: .5rem;
+	padding-top: 0;
+}
+
+.comment-author {
+	padding: .5rem;
+	padding-bottom: 0;
+}
+
+/* III.f.3 Adjust margins as screens grow
+/* ----------------------------------------------------- */
+
+@media ( min-width: 20em ) {
+	 .comments-area {
+		padding: 1rem;
+	 }
+
+	.comment {
+		padding: 1rem;
+		padding-right: .25rem;
+	}
+
+	.comment-list .children {
+		padding-top: 1rem;
+	}
+}
+
+
+/**
+ * III.g Other layout elements
+ *
+ * Layout properties not already covered above.
+ */
+
+
+/* III.g.1 Index, Search, and Archive margins & padding    */
+/* ----------------------------------------------------- */
+
+.entrypage-header,
+.entry-header,
+.entry-footer,
+.entrypage-footer {
+	padding: .5rem;
+}
+
+.entry-body {
+	padding: .1rem 1rem;
+}
+
+
+@media ( min-width: 20em ) {
+	.entry-title {
+		display: inline-block;
+	}
+}
+
+@media ( min-width: 40em ) {
+	.entry-item {
+		margin: 1rem;
+		border: 1px solid #ddd;
+	}
+	.entry-header {
+		padding: none;
+	}
+}
+
+@media ( min-width: 60em ) {
+	.entry-item {
+		margin: 2rem;
+	}
+	.entry-body {
+		padding: .5rem 2rem;
+	}
+}
+
+/* III.g.2 images & media in posts */
+/* ----------------------------------------------------- */
+
+/* The featured image / thumbnail is only shown on searches
+ * and archives -- views that show the excerpt. Views that 
+ * show the content don't display the featured image
+ * separately; just the images as inserted into the post. */
+
+
+/* Smallest widths: image on it's own line, centered */
+.wp-caption,
+.entry-body img,
+.article-body img,
+.wp-audio-shortcode, {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	padding: .5rem;
+	margin: .5rem;
+}
+
+.format-video .entry-body {
+	padding: 2rem;
+}
+
+
+.wp-caption-text {
+	margin: .25rem 0;
+}
+
+@media ( min-width: 400px ) {
+	/* I prefer to do media queries in em's, but since the WordPress
+	 * thumbnails are 200px, I want the break-point to be at twice
+	 * that. */
+	.entry-body img,
+	.article-body img {
+		margin: 0 2rem 0 0;
+	}
+
+	.excerpt-thumb {
+		float: left;
+	}
+
+	.format-image img {
+		margin-top: 1rem;
+	}
+
+}
+
+/* III.g.3 "Previous" and "Next" navigation links		 */
+/* ----------------------------------------------------- */
+
+.nav-previous {
+	float: left;
+	margin: .5rem;
+}
+
+
+.nav-next {
+	float: right;
+	margin: .5rem;
+}
+
+.nav-group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+
+/* III.g.4 Other margins, padding, and layout */
+/* ----------------------------------------------------- */
+.masthead {
+	margin: 0;
+	padding: 1rem .5rem;
+	text-align: center;
+}
+
+.site-title, 
+.site-description {
+	padding: 0;
+	margin: 0;
+}
+
+.site-title {
+	margin-bottom: .25rem;
+}
+
+
+.title-main, 
+.entrypage-description
+{
+	margin: 0;
+	padding: .25em;
+}
+
+.article-header {
+	padding: 1rem;
+}
+
+.entry-title
+{
+	margin: 0;
+	padding: .25em;
+}
+
+.byline-bar {
+	padding: 0;
+}
+
+.byline-bar > * {
+	display: inline-block;
+	padding: 0;
+	margin: .5rem;
+}
+
+
+.entry-body,
+.article-body {
+	min-height: 10rem;
+}
+
+.article-body {
+	padding: 1rem;
+}
+
+@media ( min-width: 20em ) {
+	.article-body {
+		padding: 0 2rem;
+	}
+}
+
+.metadata-list,
+.comments-link {
+	display: block;
+	padding: 0;
+	margin: .5rem;
+}
+
+footer {
+	clear: both;
+}
+.article-footer {
+	margin: 0;
+	padding: 0;
+}
+
+.site-footer {
+	margin: 0;
+	padding: .5rem;
+}
+/* ===================================================== */
+/* IV. Post-format styling
+/* ===================================================== */
+
+/**
+ * IV. Styling specific to various post-format types.
+ *
+ */
+
+
+/**
+ * IV.a. Gallery post format 
+ */
+
+.gallery-icon img {
+	margin: 1rem auto;
+	padding: 0;
+}
+
+.gallery-item .gallery-caption {
+	display: none;
+	position: absolute;
+	background-color: #eee;
+	padding: .5rem;
+	box-shadow: 3px 3px 3px 0 #111;
+	color: #444;
+	max-width: 20rem;
+	text-align: left;
+}
+
+.gallery-item:hover .gallery-caption {
+	display: block;
+}
+
+/**
+ * IV.b all 'Minor' post formats 
+ *
+ * Syling for those elements that appear on the index page
+ * without titles.
+ */
+
+.entry-item,
+.article-minor-body {
+	box-shadow: -3px -3px 0 0 #ccc;
+	border: 1px solid #ccc;
+}
+
+.article-minor-body {
+	padding: 0 1rem;
+	margin: 0 2rem;
+}
+
+.entry-minor .entry-body {
+	min-height: 0;
+}
+.minor-entry-footer {
+	padding: .5rem;
+	background-color: #eee;
+}
+.minor-entry-footer > * {
+	padding: .5rem;
+	margin: .5rem;
+}
+
+/* IV.c link */
+
+.format-link .entry-body a,
+.format-link .article-body a {
+	padding: .25rem;
+	margin: .25rem;
+	background-color: #FEF0DD;
+	font-size: 1.25rem;
+}
+
+
+/* IV.d quote */
+
+.format-quote blockquote {
+	background-color: inherit;
+}
+
+/** 
+ * V. Icons
+ *
+ * We use an icon font to insert icons to various places. Note:
+ * the '00a0' entity appearing in several declarations below
+ * is a non-breaking space. The other entities are characters in 
+ * the included Fontelloicon font. 
+ */
+
+/**
+ * V.a 'Next' and 'Previous' icons 
+ */
+
+.icon-next::after {
+	content: '\00a0\00a0\e8ab'; /* right-facing angle */ 
+}
+
+.icon-prev::before {
+	content: '\e8aa\00a0\00a0'; /* left-facing angle */ 
+}
+
+/**
+ * V.b Icon to preceed post title on sticky posts 
+ */
+
+.sticky .icon-entry-title::after {
+	content: '\e80c\00a0\00a0'; /* circled exclaimation point */
+}
+
+
+/* V.c Icons to appear with the tags, cattegories, and comment 
+ *    link labels.
+ */
+
+.icon-tags::before {
+	content: '\e801\00a0\00a0'; /* tags */
+}
+
+.icon-categories::before {
+	content: '\e82e\00a0\00a0'; /* Open folder */
+}
+
+.icon-comments::before {
+	content: '\e88e\00a0\00a0'; /* word baloon with three dots */
+}
+
+/**
+ * V.d Dynamic arrows on collapsed items for small screens.
+ */
+
+@media ( max-width: 20em ) {
+
+	.js .icon-entry-title::before,
+	.js .icon-widget-title::before  {
+		content: '\e8ab\00a0\00a0'; /* Right-facing angle */ 
+	}
+
+	.toggled .icon-entry-title::before,
+	.toggled .icon-widget-title::before {
+		content: '\e8a9\00a0\00a0'; /* Down-facing angle */
+	}
+
+	.icon-menu-toggle::before {
+		content: '\e817\00a0\00a0'; /* right-facing angle circled */
+	}
+
+	.toggled .icon-menu-toggle::before {
+		content: '\e818\00a0\00a0' /* down-facing angle circled */	
+	}
+}
+
+/**
+ * V.e Dynamic arrow icons on drop-down menu items
+ */
+
+@media ( min-width: 20em ) {
+	/* the > a > direct selection is neccessary, because
+	 * without it all the children of an item will have the 
+	 * same arrow. */
+	.menu-item-has-children > a > .icon-menu-item:before,
+	.page_item_has_children > a > .icon-menu-item:before {
+		content: '\e815\00a0\00a0';
+	}
+
+	.menu-item-has-children:hover > a >  .icon-menu-item:before,
+	.menu-item-has-children.sfHover > a > .icon-menu-item:before,
+	.page_item_has_children:hover > a > .icon-menu-item:before,
+	.page_item_has_children.sfHover > a > .icon-menu-item:before
+	{
+		content: '\e812\00a0\00a0'; 
+	}
+}
+
+
+/**
+ * V.f post-format icons
+ *
+ * Prepend the title of each post-format (other than 
+ *     standard) with a representative icon.
+ */
+
+.icon-aside::before {
+	content: '\e81b';
+}
+
+.icon-link::before {
+	content: '\e803';
+}
+
+.icon-status::before {
+	content: '\e8ad';
+}
+
+.minor-item-icon {
+	margin: 1rem 1rem 1rem 0;
+	float: left;
+	font-size: 3rem;
+	color: #ddd;
+}
+
+
+.format-audio .icon-entry-title::after {
+	content: '\e811\00a0\00a0';
+}
+
+
+.icon-chat::after {
+	content: '\e844';
+}
+
+.format-gallery .icon-entry-title::after {
+	content: '\e83a\00a0\00a0';
+}
+.format-image .icon-entry-title::after {
+	content: '\e804\00a0\00a0';
+}
+
+.icon-quote::before {
+	content: '\e800';
+}
+
+.format-video .icon-entry-title::after {
+	content: '\e88b\00a0\00a0';
+}

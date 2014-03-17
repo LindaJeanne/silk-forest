@@ -1,0 +1,635 @@
+/* resetnormal.css
+ *
+ * This normalize/reset file draws heavily from:
+ *  Nicolas Gallagher's & Jonathan Neal's normalize.css: 
+ *  	http://git.io/normalize (MIT licence) 
+ * Eric Meyer's reset.css: 
+ * 	http://meyerweb.com/eric/tools/css/reset/  
+ * 	(Released to public domain)
+ * underscores: http://www.underscores.me (GPL)
+ * several default wordpress themes (GPL)
+ *
+ * Licence: GPL
+ */
+
+/* Contents:
+ *    1. Wordpress image alignment tag support
+ *    2. HTML5 compatibility
+ *    3. Basic Typography 
+ *    4. Forms
+ *    5. Miscelaneous tweaks and fixes
+ *    6. Screen reader text
+ */
+
+
+/* ===================================================== */
+/* 1. Wordpress image alignment tag support  */
+/* ===================================================== */
+/* These are required to support WordPress built-in float-text capabilities */
+/* http://codex.wordpress.org/Wrapping_Text_Around_Images */
+
+img.alignrignt,
+a img.alignright,
+.wp-caption.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+img.alignleft,
+a img.alignleft,
+.wp-caption.alignleft {
+	float: left;
+	margin: 0 1em 1em 0
+}
+
+img.aligncenter,
+a img.aligncenter,
+.wpcaption.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.alignleft {float: left;}
+.alignright {float: right;}
+
+/* ===================================================== */
+/* 2. HTML5 compatibility */
+/* ===================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+    display: none;
+}
+
+/* ===================================================== */
+/* 3. Typography 
+/* ===================================================== */
+body
+{
+	font-weight: 400;
+	font-size: 16px;
+	font-size: 1em;
+	line-height: 1.5;
+	color: #444;
+	white-space: normal;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+    margin: 0;
+}
+
+pre, 
+code, 
+var, 
+kbd, 
+tt,
+samp
+{
+	white-space: pre-wrap;
+}
+
+blockquote,
+pre {
+	padding: 1rem;
+	margin: .25rem;
+	background-color: #eee;
+}
+
+blockquote p {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+code{
+	background-color: #eee;
+}
+
+pre code {
+	background-color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2;
+}
+
+
+/**
+ * Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+	font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+	height: 0;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+small			{	font-size: 75%;		}
+big			{	font-size: 125%;	}
+b, strong, dt, th	{	font-weight: bold;	}
+em, i, cite, dfn	{	font-style: italic;	}
+
+mark, 
+ins {
+	text-decoration: none;
+	background-color: #fff9c0;	
+}
+
+del,
+strike {
+	text-decoration: line-through;
+	color: #777;
+}
+
+abbr, acronym {
+	cursor: help;
+}
+
+ul {
+	list-style: disc;
+	padding-left: 1rem;
+}
+ol { 
+	list-style: decimal;
+	padding-left: 1rem;
+}
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==================================================================== */
+/* 4. Form elements							*/
+/* ==================================================================== */
+
+input,
+form {
+	max-width: 100%;
+}
+
+form {
+	padding: 1rem;
+}
+
+button,
+input,
+select,
+textarea {
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+}
+
+button,
+input,
+select,
+textarea {
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+}
+textarea {
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	padding: 0;
+}
+
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	color: #444;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/* ==================================================================== */
+/* 5. Miscelaneous tweaks and fixes					*/
+/* ==================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+	border: 1px solid #555;
+	padding: .5rem;
+	margin: .5rem;
+}
+
+th {
+	font-weight: bold;
+	background-color: #eee;
+}
+/*--------------------------------------------------------------------- */
+/* make sure images always fit within the screen. */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	font-style: italic; 
+	font-size: .75rem;
+	max-width: 100%;
+	outline: none;
+	border: none;
+}
+
+/* ===================================================== */
+/* 6. Screen Reader Text */
+/* ===================================================== */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	color: #21759b;
+	text-decoration: none;
+}
+
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {	background-color: #f1f1f1;	}
+
+
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	border-radius: 3px;
+}
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	padding: 15px 23px 14px;
+}
+
+
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	display: block;
+}
+
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	clip: auto !important;
+	height: auto;
+	left: 5px;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus
+{
+	font-weight: bold;
+}
